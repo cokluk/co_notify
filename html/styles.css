@@ -1,0 +1,185 @@
+ 
+ @font-face {
+  font-family: ifont;
+  src: url(ifont.ttf);
+}
+
+ .phone {
+    position: absolute;
+    background: url(img/coque/iphone.png);
+    right: 0;
+    bottom: 0;
+    width: 500px;
+    height: 1000px;
+    background-size: cover;
+    overflow: hidden;
+ }
+ 
+ .screen {
+    position: absolute;
+    background: url(img/background/iphone.jpg);
+    background-size: cover;
+    bottom: 190px;
+    left: 44px;
+    right: 39px;
+    z-index: -10;
+    top: 100px;
+    border-radius: 30px;
+    display: flex;
+    overflow: hidden;
+}
+ 
+ .alt {
+    bottom: 0;
+    position: absolute;
+    margin-left: 10px;
+	
+	}
+	
+	.alt img { margin-left:4px;  margin-right:4px;}
+	
+	 .apps {
+     margin-top:30px;
+    position: absolute;
+   
+	}
+	
+	.apps img { margin-left:10px;}
+	
+	b {    font-family: sans-serif;
+    color: white;
+    position: absolute;
+    left: 20px;
+    bottom: -15px;
+    text-shadow: 0 0 20px black;}
+	
+	
+	.twitter {
+	
+    background: #28aae1;
+    width: 100%;
+    z-index: 10;
+	margin-top:20px;
+	
+	}
+	
+	.twitter_loading { display:none;  margin-top: 40%;}
+	.twitter_header {     width: 100%;
+    background: #fafafa;
+    height: 60px;}
+	
+	.ustbar {
+	    width: 100%;
+    height: 20px;
+    color:white;
+ 	    position: absolute;
+		font-family:ifont;
+		
+		 
+	}
+	.twitter button {
+	    display: block;
+    padding: 15px;
+    padding-left: 20px;
+    padding-right: 20px;
+    background: white;
+    font-size: 30px;
+    position: absolute;
+    font-weight: 500;
+    right: 20px;
+    border: none;
+    border-radius: 30px;
+	}
+	
+	
+	
+	.sag {
+	    position: absolute;
+    right: 0;
+	margin-top:2px;
+	    padding: 8px;
+    margin-right: 10px;}
+	
+	.sol {
+	    position: absolute;
+    left: 0;
+	    padding: 8px;
+    margin-left: 10px;
+	}
+	
+	#twitterpostarea {
+    width: 95%;
+    margin: 10px;
+    border-radius: 30px;
+    font-size: 24px;
+    border: none;
+    padding: 8px;
+    font-family: sans-serif;
+    height: 100px;
+	}
+	* { font-family:ifont;}
+	
+	.tmenu   {
+	       position: absolute;
+    bottom: 0;
+    width: 95%;
+    margin-left: 10px;
+    margin-bottom: 7px;}
+	.tmenu a {
+	 display: block;
+    background: white;
+    text-align: center;
+    padding: 5px;
+    font-size: 32px;
+    text-decoration: none;
+      border-bottom: 1px solid #e8e8e8;
+    color: #7f7f7f;
+	 
+	font-weight:100;
+	}
+	
+	.bildirim {
+	
+	width: 95%;
+    background: rgb(255 255 255 / 77%);
+    height: 120px;
+    margin-top: 70px;
+    margin-left: 12px;
+    border-radius: 25px;
+	
+	
+	}
+	
+	.bildirim img {
+    width: 30px;
+    margin-left: 10px;
+    margin-top: 10px;
+	}
+	
+	.bildirim span {
+    margin-left: 5px;
+    position: absolute;
+    font-size: 24px;
+    margin-top: 12px;
+    color: rgb(103 103 103 / 48%);
+}
+
+.bildirim p {
+	    margin-left: 10px;
+    margin-bottom: 0;
+    margin-top: 5px;
+	    font-weight: 500;
+}
+	
+	
+	.bildirim textarea {
+	margin-left: 10px;
+	margin-top: 0px;
+	width: 95%;
+	height: 35px;
+	font-size:24px;
+	background: none;
+	border: none;
+	resize: none;
+	overflow: hidden;
+	}
