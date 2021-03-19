@@ -1,4 +1,4 @@
-# co_notify
+# co_notify 
 
 
 | | | |
@@ -31,7 +31,7 @@ end
 
 
 
-
+# DISABLE CHECK PHONE OPTION
 if u need to disable check phone option, disable server.lua file and delete this lines and change "telefon" variable to "phone"
 ```lua
 Citizen.CreateThread(function()
