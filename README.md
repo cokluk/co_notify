@@ -1,5 +1,10 @@
 # co_notify
 
+
+| | | |
+|:-------------------------:|:-------------------------:|:-------------------------:|
+|<img width="1604" alt="screen shot 2017-08-07 at 12 18 15 pm" src="https://cokluk.com/dl/co1.png">  Oyuncu listesi |  <img width="1604" alt="screen shot 2017-08-07 at 12 18 15 pm" src="https://cokluk.com/dl/co2.png"> Oyuncu sayısı |<img width="1604" alt="screen shot 2017-08-07 at 12 18 15 pm" src="https://cokluk.com/dl/co3.png"> Sunucu durumu |
+
 NoPixel style phone notification.
 
 ![alt text](https://cdn.discordapp.com/attachments/769585952389070849/822017853347069952/unknown.png)
