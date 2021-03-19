@@ -21,3 +21,24 @@ for _, i in ipairs(players) do
    TriggerClientEvent('co_notify:client:SendNotifys', i, { app = "twitter" , title = "Title", content = "message"  })
 end
 ```
+
+
+if u need to disable check phone option, disable server.lua file and delete this lines and change "telefon" variable to "phone"
+```lua
+Citizen.CreateThread(function()
+    while true do
+        Citizen.Wait(10)
+        TriggerServerEvent("co_notify:check_phone");
+    end
+end)
+
+
+RegisterNetEvent('co_notify:phone')
+AddEventHandler('co_notify:phone', function(data)
+    telefon = data.phone
+	if telefon == "yok" then
+	   telefon = nil
+	end
+end)
+ 
+```
