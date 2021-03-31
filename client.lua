@@ -1,10 +1,11 @@
 telefon = nil
+FirstRun = false
+ 
+TriggerServerEvent("co_notify:check_phone");
 
-Citizen.CreateThread(function()
-    while true do
-        Citizen.Wait(10)
-        TriggerServerEvent("co_notify:check_phone");
-    end
+RegisterNetEvent('co_notify:first_run')
+AddEventHandler('co_notify:first_run', function(data)
+    SendNUIMessage({ action = "ilk", zoom = Config.zoom, background = Config.background, time = Config.time  }) 
 end)
 
 
@@ -18,17 +19,15 @@ end)
  
 RegisterNetEvent('co_notify:client:SendNotifys')
 AddEventHandler('co_notify:client:SendNotifys', function(data)
-    print(telefon)
-    if telefon ~= nil   then
-	SendNUIMessage({ action = "bildirim", uygulama = data.app, baslik = data.title, icerik = data.content })
-	end
+    if FirstRun == false then TriggerEvent('co_notify:first_run'); FirstRun = true  end
+    TriggerServerEvent("co_notify:check_phone");
+    Wait(100)
+    if telefon ~= nil then SendNUIMessage({ action = "bildirim", uygulama = data.app, baslik = data.title, icerik = data.content }) end
 end)
 
-
-
 function SendNotify(app, title, content)
-    print(telefon)
-    if telefon ~= nil  then
-	SendNUIMessage({ action = "bildirim", uygulama = app, baslik = title, icerik = content})
-	end
+    if FirstRun == false then TriggerEvent('co_notify:first_run'); FirstRun = true  end
+    TriggerServerEvent("co_notify:check_phone");
+    Wait(100)
+    if telefon ~= nil  then SendNUIMessage({ action = "bildirim", uygulama = app, baslik = title, icerik = content}) end
 end

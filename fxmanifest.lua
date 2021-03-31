@@ -11,10 +11,13 @@ server_script {
 	'server.lua'
 }
 
+shared_script 'config.lua'
+
 dependency 'es_extended'
 
 exports {
 	'SendNotify',
+	'SendNotifys'
 }
 
 ui_page 'html/index.html'

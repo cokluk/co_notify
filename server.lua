@@ -1,13 +1,6 @@
 ESX = nil
 
-Citizen.CreateThread(function()
-    while ESX == nil do
-        Citizen.Wait(10)
-        TriggerEvent("esx:getSharedObject", function(obj)
-            ESX = obj
-        end)
-    end
-end)
+TriggerEvent("esx:getSharedObject", function(obj)  ESX = obj end)
 
 RegisterNetEvent("co_notify:check_phone")
 AddEventHandler('co_notify:check_phone', function()
@@ -15,17 +8,10 @@ AddEventHandler('co_notify:check_phone', function()
    local _source = source
    local xPlayer = ESX.GetPlayerFromId(_source)
    if not xPlayer  then return end
-   if xPlayer.getInventoryItem('phone') then
-     if xPlayer.getInventoryItem('phone').count ~= 0 then  phone = "phone" end 
-   elseif
-     xPlayer.getInventoryItem('blue_phone') then
-     if xPlayer.getInventoryItem('blue_phone').count ~= 0 then  phone = "blue_phone" end 
-   elseif
-     xPlayer.getInventoryItem('green_phone') then
-     if xPlayer.getInventoryItem('green_phone').count ~= 0 then  phone = "green_phone" end 
-   elseif
-     xPlayer.getInventoryItem('white_phone') then
-     if xPlayer.getInventoryItem('white_phone').count ~= 0 then  phone = "white_phone" end 
-   else phone = "yok" end
+   for i, telefon in ipairs(Config.phones) do
+    if xPlayer.getInventoryItem(telefon) then
+     if xPlayer.getInventoryItem(telefon).count ~= 0 then  phone = telefon break; else phone = "yok" end 
+    end
+   end
    TriggerClientEvent('co_notify:phone', source, { phone = phone })
 end)
