@@ -7,10 +7,7 @@ Bu gcphone en yaygın kullanılan gcphone içindir eğer triggerlarınızın isi
 ```lua
 RegisterNUICallback('youtube_Play', function(data)
     exports['co_notify']:SendNotify('youtube', data, "true") --EKLENMESİ GEREKEN KOD!
-    exports["xsound"]:Cal(data, false)
-
 end)
-
 ```
  
  
