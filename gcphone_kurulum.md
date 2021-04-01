@@ -16,3 +16,28 @@ end)
  if message.owner == 0 then
     exports['co_notify']:SendNotify('mesaj', message.transmitter.." Tarafından gelen mesaj.", message.message) --EKLENMESİ GEREKEN KOD!
 ```
+
+
+
+[server/twitter.lua] twitter gelen post ayarı.
+"gcPhone:twitter_postTweets" triggerini aratın ve bulun daha sonra, local srcIdentifier = getPlayerID(source)'den sonra aşşağıdaki kodları ekleyin.
+ ```lua
+	local xPlayer = ESX.GetPlayerFromId(source)
+	local players = GetPlayers()
+	print("twitter")
+    for _, i in ipairs(players) do
+	      TriggerClientEvent('co_notify:client:SendNotifys', i, { app = "twitter" , title = "@"..xPlayer.getName(), content = message , source = i })
+	end
+```
+Düzgün halinin görünmesi gerekiyor
+ ```lua
+    local sourcePlayer = tonumber(source)
+    local srcIdentifier = getPlayerID(source)
+	local xPlayer = ESX.GetPlayerFromId(source)
+	local players = GetPlayers()
+	print("twitter")
+    for _, i in ipairs(players) do
+	      TriggerClientEvent('co_notify:client:SendNotifys', i, { app = "twitter" , title = "@"..xPlayer.getName(), content = message , source = i })
+	end
+    TwitterPostTweet(message, image, sourcePlayer, srcIdentifier)
+```
