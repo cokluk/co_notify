@@ -1,6 +1,15 @@
 telefon = nil
 FirstRun = false
- 
+
+Citizen.CreateThread(function()
+	while true do
+            Citizen.Wait(0)
+            if IsControlJustReleased(0, 186) then 
+                    SendNUIMessage({ action = "ytkapat"  }) 
+            end
+     end
+end)
+
 TriggerServerEvent("co_notify:check_phone");
 
 RegisterNetEvent('co_notify:first_run')
@@ -27,6 +36,10 @@ end)
 
 function SendNotify(app, title, content)
     if FirstRun == false then TriggerEvent('co_notify:first_run'); FirstRun = true  end
+    if app == "youtube" then 
+        SendNUIMessage({ action = "youtube", uygulama = app, baslik = title, icerik = content})
+        return
+    end;
     TriggerServerEvent("co_notify:check_phone");
     Wait(100)
     if telefon ~= nil  then SendNUIMessage({ action = "bildirim", uygulama = app, baslik = title, icerik = content}) end
