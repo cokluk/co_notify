@@ -24,7 +24,7 @@ end)
  ```lua
 	local xPlayer = ESX.GetPlayerFromId(source)
 	local players = GetPlayers()
-	print("twitter")
+
     for _, i in ipairs(players) do
 	      TriggerClientEvent('co_notify:client:SendNotifys', i, { app = "twitter" , title = "@"..xPlayer.getName(), content = message , source = i })
 	end
@@ -33,9 +33,8 @@ Düzgün halinin görünmesi gerekiyor
  ```lua
     local sourcePlayer = tonumber(source)
     local srcIdentifier = getPlayerID(source)
-	local xPlayer = ESX.GetPlayerFromId(source)
-	local players = GetPlayers()
-	print("twitter")
+    local xPlayer = ESX.GetPlayerFromId(source)
+    local players = GetPlayers()
     for _, i in ipairs(players) do
 	      TriggerClientEvent('co_notify:client:SendNotifys', i, { app = "twitter" , title = "@"..xPlayer.getName(), content = message , source = i })
 	end
