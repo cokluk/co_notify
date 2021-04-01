@@ -1,30 +1,16 @@
-# co_notify 
+# gcphone kurulumu 
 
-
-| | | |
-|:-------------------------:|:-------------------------:|:-------------------------:|
-|<img width="1604" alt="screen shot 2017-08-07 at 12 18 15 pm" src="https://cdn.discordapp.com/attachments/769585952389070849/822017853347069952/unknown.png">  SMS APP |  <img width="1604" alt="screen shot 2017-08-07 at 12 18 15 pm" src="https://user-images.githubusercontent.com/47196492/113233013-f3f3ce00-92a6-11eb-9c79-c4b643396b1e.png"> YouTube |<img width="1604" alt="screen shot 2017-08-07 at 12 18 15 pm" src="https://cdn.discordapp.com/attachments/766379633318035456/822389056041779230/unknown.png"> Twitter |
-
-NoPixel style phone notification.
-
+Bu gcphone en yaygın kullanılan gcphone içindir eğer triggerlarınızın isimlerinde farklı yazılar mevcutsa kendiniz konumlarını bulmanız gerekir.
  
-
-
-[CLIENT] Send notification to player
+[client/youtube.lua] youtube kurulumu
+"youtube_Play" triggerini bulun ve içerisine bizim kodumuzu yerleştirin
 ```lua
-exports['co_notify']:SendNotify('mesaj', "Title", "message")
-```
-[SERVER] Send message to source player. 
-```lua
-TriggerClientEvent('co_notify:client:SendNotifys', source, { app = "twitter" , title = "Title", content = "message"   })
-```
-[SERVER] Send message to all players. 
-```lua
-for _, i in ipairs(GetPlayers()) do
-   TriggerClientEvent('co_notify:client:SendNotifys', i, { app = "twitter" , title = "Title", content = "message"  })
-end
-```
+RegisterNUICallback('youtube_Play', function(data)
+    exports['co_notify']:SendNotify('youtube', data, "true") --EKLENMESİ GEREKEN KOD!
+    exports["xsound"]:Cal(data, false)
 
+end)
 
-
+```
+ 
  
