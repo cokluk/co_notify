@@ -40,3 +40,6 @@ Düzgün halinin görünmesi gerekiyor
 	end
     TwitterPostTweet(message, image, sourcePlayer, srcIdentifier)
 ```
+
+
+Twitterin aynısını sarı sayfalar için uygulayın mantık birebir aynı, trigger ismi "gcPhone:yellow_postIlan", dosya [server/yellowpages.lua]
