@@ -12,8 +12,8 @@
 	</head>
 
  
-	<body >
-	 <div id="cerceve" style="transition: 1s;   position: fixed;   bottom: -1000px;  right: 0;   zoom: 60%;">
+	<body  >
+	 <div id="cerceve" style="transition: 1s;    position: fixed;   bottom: -1000px;  right: 350px;   zoom: 60%;">
 	 <div class="phone" >
  
  <div class="screen" id="screen" >
@@ -21,9 +21,9 @@
  <div id="ustbar" class="ustbar"><center><span class="sol">CoMaven</span><img src="img/coque/centik.png"><span class="sag"><img src="img/coque/status-white.png"></span></center></div>
  
 <div id="bildirim" style="display:none;" class="bildirim" >
- <div> <img id="icon" src="img/sms.png" /><span id="title">MESSAGES</span> </div>
- <p id="baslik">Bildirim başlığı</p>
- <textarea id="icerik">Bildirim içeriğiBildirim içeriğiBildirim içeriğiBildirim içeriğiBildirim içeriğiBildirim içeriğiBildirim içeriğiBildirim içeriğiBildirim içeriğiBildirim içeriğiBildirim içeriğiBildirim içeriğiBildirim içeriğiBildirim içeriğiBildirim içeriği</textarea>
+ <div> <img id="icon" src="img/sms.png" /><span id="title"></span> </div>
+ <p id="baslik"></p>
+ <textarea id="icerik"></textarea>
 </div>
  
       <div id="youtube" class="youtube" >
@@ -40,9 +40,43 @@
 		</div> 
 	  </div>
  
+	<div id="arama" class="arama">
+		
+		<div id="arama_caliyor"  >
+		<table style="width:100%;padding-top: 20px;padding-left: 10px;padding-right: 10px;">
+			<tr>
+			  <th><img src="img/decline.png" style="width: 80px;" /></th>
+			  <th>
+				 <h2 id="numara1" style="font-weight: 500;text-shadow: 0 0 2px white;">000-000</h2> 
+ 
+				 <p id="anim_text" style="font-weight: 100;"> Etkileşim yön tuşları </p>
+ 
+				
+			  </th>
+			  <th><img src="img/accept.png" style="width: 80px;" /></th>
+			</tr>
+		 </table>
+		</div>
+
+		<div id="arama_devamediyor"  >
+			<table style="width:100%;padding-top: 20px;padding-left: 10px;padding-right: 10px;">
+				<tr>
+					<th><img src="img/decline.png" style="width: 80px;" /></th>
+				  <th>
+					 <h2 style="font-weight: 500;text-shadow: 0 0 2px white;" id="numara2">000-000 </h2> 
+					 <p style="font-weight: 100;margin-bottom: -10px;margin-top: -10px;" id="sayac">0:00</p>
+					 <p style="font-weight: 100;">[←]  Aramayı sonlandırmak için</p>
+				  </th>
+				</tr>
+			 </table>
+	    </div>
+	</div>
  </div>
  
- 
+ <script>
+
+
+ </script>
  </div>	
  
   </div>
