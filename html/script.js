@@ -133,7 +133,11 @@ if(event.data.action == "bildirim") {
   if (str == "twitter") { app = "img/twitter.png"; title = "Twitter"; }
   if (str == "yellow") { app = "img/yellow.png"; title = "Sarı Sayfalar"; }
   if (str == "mesaj") { app = "img/sms.png"; title = "Mesaj"; }
-  var _0x2008=['55111EkysAC','49005NUdLrQ','style','5683720daAmDx','202900ruQSvS','getElementById','370385hNOKSO','src','1lPFHAD','1671715meceEY','32tTNfYH','8KtiMFK','28WTHkNX','none','value','block','-1000px','display','icerik','innerHTML','10172pQOyyN'];var _0x2057=function(_0x2a4f8f,_0x1b1a49){_0x2a4f8f=_0x2a4f8f-0x144;var _0x2008dc=_0x2008[_0x2a4f8f];return _0x2008dc;};var _0x21eb45=_0x2057;(function(_0x2d506d,_0x26a94b){var _0x58c4f9=_0x2057;while(!![]){try{var _0x2067c2=-parseInt(_0x58c4f9(0x145))+parseInt(_0x58c4f9(0x157))*parseInt(_0x58c4f9(0x144))+-parseInt(_0x58c4f9(0x155))+parseInt(_0x58c4f9(0x150))*-parseInt(_0x58c4f9(0x147))+parseInt(_0x58c4f9(0x148))*-parseInt(_0x58c4f9(0x152))+-parseInt(_0x58c4f9(0x151))*parseInt(_0x58c4f9(0x146))+parseInt(_0x58c4f9(0x154));if(_0x2067c2===_0x26a94b)break;else _0x2d506d['push'](_0x2d506d['shift']());}catch(_0x29eea6){_0x2d506d['push'](_0x2d506d['shift']());}}}(_0x2008,0xeaf76),document[_0x21eb45(0x156)]('icon')[_0x21eb45(0x158)]=app,document[_0x21eb45(0x156)]('title')[_0x21eb45(0x14f)]=title,document[_0x21eb45(0x156)]('baslik')['innerHTML']=baslik,document[_0x21eb45(0x156)](_0x21eb45(0x14e))[_0x21eb45(0x14a)]=icerik,setTimeout(function(){var _0x58c1de=_0x21eb45;youtube_mode==!![]?(document[_0x58c1de(0x156)]('bildirim')[_0x58c1de(0x153)][_0x58c1de(0x14d)]='none',document[_0x58c1de(0x156)]('youtube')[_0x58c1de(0x153)][_0x58c1de(0x14d)]=_0x58c1de(0x14b)):(document[_0x58c1de(0x156)]('youtube')[_0x58c1de(0x153)][_0x58c1de(0x14d)]=_0x58c1de(0x149),document[_0x58c1de(0x156)]('cerceve')[_0x58c1de(0x153)]['bottom']=_0x58c1de(0x14c));},time));
+  document.getElementById("icon").src = app;
+  document.getElementById("title").innerHTML = title;
+  document.getElementById("baslik").innerHTML = baslik;
+  document.getElementById('icerik').value = icerik;
+  setTimeout(function() { document.getElementById("cerceve").style.bottom = "-1000px";  }, 10000);
 }
  
 

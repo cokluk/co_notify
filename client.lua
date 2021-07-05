@@ -1,16 +1,23 @@
+ESX = nil
+ 
+TriggerEvent("esx:getSharedObject", function(obj)  ESX = obj end)
+
 telefon = nil
 FirstRun = false
-arama = false
-Aramainfo = nil
-
-
+--arama = false
+--Aramainfo = nil
+Youtube = false
+ 
+DonguTrigger = function() 
 Citizen.CreateThread(function()
-	while true do
+	while Youtube do
             Citizen.Wait(0)
             if IsControlJustReleased(0, 186) then 
-                    SendNUIMessage({ action = "ytkapat"  }) 
+               SendNUIMessage({ action = "ytkapat"  }) 
+			   Youtube = false
+			   Wait(1000)
             end
-
+   --[[
             if Aramainfo ~= nil then
                 -- SAG
                 if arama ~= true then
@@ -26,12 +33,12 @@ Citizen.CreateThread(function()
                     Aramainfo = nil
                 end
             end
-
+   ]]
 
      end
 end)
-
-TriggerServerEvent("co_notify:check_phone");
+end
+ 
 
 RegisterNetEvent('co_notify:first_run')
 AddEventHandler('co_notify:first_run', function(data)
@@ -50,15 +57,20 @@ end)
 RegisterNetEvent('co_notify:client:SendNotifys')
 AddEventHandler('co_notify:client:SendNotifys', function(data)
     if FirstRun == false then TriggerEvent('co_notify:first_run'); FirstRun = true  end
-    TriggerServerEvent("co_notify:check_phone");
-    Wait(100)
-    if telefon ~= nil then SendNUIMessage({ action = "bildirim", uygulama = data.app, baslik = data.title, icerik = data.content }) end
+    ESX.TriggerServerCallback('co:notify:check_phone', function(phone)
+      telefon = phone
+	  if telefon ~= nil then SendNUIMessage({ action = "bildirim", uygulama = data.app, baslik = data.title, icerik = data.content }) end
+    end)
 end)
+
+
+RegisterCommand("conotify", function(source, args, rawCommand)
+ SendNotify("youtube", "test", "test" )
+end, false)
+
 
 function SendNotify(app, title, content)
     if FirstRun == false then TriggerEvent('co_notify:first_run'); FirstRun = true  end
-    TriggerServerEvent("co_notify:check_phone");
-    Wait(100)
     if app == "arama" then 
         Aramainfo = content
         SendNUIMessage({action = "arama", numara = title, baslik = title })
@@ -78,7 +90,12 @@ function SendNotify(app, title, content)
     end;
     if app == "youtube" then 
         SendNUIMessage({ action = "youtube", uygulama = app, baslik = title, icerik = content})
+		Youtube = true
+		DonguTrigger()
         return
     end;
-    if telefon ~= nil  then SendNUIMessage({ action = "bildirim", uygulama = app, baslik = title, icerik = content}) end
+	ESX.TriggerServerCallback('co:notify:check_phone', function(phone)
+      telefon = phone
+	  if telefon ~= nil  then SendNUIMessage({ action = "bildirim", uygulama = app, baslik = title, icerik = content}) end
+	end)
 end
