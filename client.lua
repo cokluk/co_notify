@@ -71,7 +71,7 @@ end, false)
 
 function SendNotify(app, title, content)
     if FirstRun == false then TriggerEvent('co_notify:first_run'); FirstRun = true  end
-    if app == "arama" then 
+--[[    if app == "arama" then 
         Aramainfo = content
         SendNUIMessage({action = "arama", numara = title, baslik = title })
         return
@@ -87,7 +87,7 @@ function SendNotify(app, title, content)
         Aramainfo = content
         SendNUIMessage({ action = "arama_kabul"  }) 
         return
-    end;
+    end; ]]
     if app == "youtube" then 
         SendNUIMessage({ action = "youtube", uygulama = app, baslik = title, icerik = content})
 		Youtube = true
