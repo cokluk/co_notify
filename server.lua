@@ -5,7 +5,7 @@ QBTOESX = false --- QB TO ESX PAKETLER İÇİN TRUE YAPIN
 TriggerEvent("esx:getSharedObject", function(obj)  ESX = obj end)
  
 ESX.RegisterServerCallback('co:notify:check_phone', function(source, cb)
-    local phone = "yok"
+    local phone = nil
     local _source = source
     local xPlayer = ESX.GetPlayerFromId(_source)
     if not xPlayer  then return end
