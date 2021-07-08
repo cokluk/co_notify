@@ -20,9 +20,7 @@ TriggerClientEvent('co_notify:client:SendNotifys', source, { app = "twitter" , t
 ```
 [SERVER] Send message to all players. 
 ```lua
-for _, i in ipairs(GetPlayers()) do
-   TriggerClientEvent('co_notify:client:SendNotifys', i, { app = "twitter" , title = "Title", content = "message"  })
-end
+TriggerClientEvent('co_notify:client:SendNotifys', -1, { app = "twitter" , title = "Title", content = "message"  })
 ```
 
 
