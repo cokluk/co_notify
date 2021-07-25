@@ -2,24 +2,15 @@ fx_version 'adamant'
 
 game 'gta5'
 
-client_script {
-    '@gcphone/client.lua',
-    '@es_extended/locale.lua',
-	'client.lua'
-}
-server_script {
-    '@es_extended/locale.lua',
-	'server.lua'
-}
+client_script { '@gcphone/client.lua', 'client.lua' }
+
+server_script {  'server.lua' }
 
 shared_script 'config.lua'
 
 dependency 'es_extended'
 
-exports {
-	'SendNotify',
-	'SendNotifys'
-}
+exports { 'SendNotify', 'SendNotifys' }
 
 ui_page 'html/index.html'
 
